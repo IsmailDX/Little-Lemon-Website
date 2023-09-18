@@ -1,0 +1,138 @@
+.navbarContainer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    width: auto;
+    height: 60px;
+}
+
+.ulBig {
+    display: flex;
+    list-style: none;
+}
+  
+li {
+    padding-left: 17px;
+}
+  
+.nav-item {
+    text-decoration: none; 
+    color: #333; 
+}
+
+.menu {
+    display: none;
+}
+
+.shopIcon {
+    display: none;
+    width: 35px;
+}
+
+.ulSmall {
+    display: none;
+}
+
+.Littlelemon2{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbarContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .ulBig {
+        display: none;
+    }
+
+    .shopIcon {
+        display: block;
+    }
+
+    .Littlelemon{
+        width: 170px;
+    }
+
+    .ulSmall {
+        display: block;
+        list-style: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    .ulSmall > li {
+        width: 90%;
+        padding: 15px;
+        border-bottom: 1px solid gainsboro;
+        border-width: 100%;
+    }
+
+    .Littlelemon2{
+        display: block;
+        width: 170px;
+        padding-top: 20px;
+        
+        padding-bottom: 15px;
+    }
+    
+    .sideBar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .close {
+        width: 20px;
+        flex-shrink: 0;
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .Littlelemon{
+        width: 140px;
+    }
+
+    .Littlelemon2{
+        display: block;
+        width: 130px;
+        padding-top: 20px;
+       
+        padding-bottom: 15px;
+    }
+    
+    .sideBar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .close {
+        width: 20px;
+        flex-shrink: 0;
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+
+}
