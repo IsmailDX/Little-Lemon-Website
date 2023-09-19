@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./styles/Navbar.css";
 import Logo from "../assets/logo1.png";
 import Shop from "../assets/iconshop.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";

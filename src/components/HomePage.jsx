@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomePage.css";
+import "./styles/HomePage.css";
 import Food from "../assets/Rectangle 45.png";
 
 const HomePage = () => {
