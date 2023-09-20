@@ -31,7 +31,7 @@ const SpecialsPage = () => {
             imageSrc={LemonDesert}
             title="Lemon Dessert"
             price="$5.00"
-            description="This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
+            description="This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined. "
           />
         </div>
       </div>

@@ -4,6 +4,8 @@ import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import SpecialsPage from "./components/SpecialsPage";
 import Testimonials from "./components/Testimonials";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +17,10 @@ function App() {
       <SpecialsPage />
 
       <Testimonials />
+
+      <About />
+
+      <Footer />
     </div>
   );
 }

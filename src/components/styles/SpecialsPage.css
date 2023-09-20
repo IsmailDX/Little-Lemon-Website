@@ -60,6 +60,7 @@
     overflow: hidden;
     border-radius: 10px;
     width: 270px;
+    position: relative;
 }
 
 .bottom-top {
@@ -102,6 +103,7 @@
 #p-below {
     color: black;
     margin-top: -25px;
+    padding-bottom: 20px;
 }
 
 #p-below2 {
@@ -118,9 +120,11 @@
 }
 
 #p-bel-containter{
+    position: absolute;
     width: 100%;
     display: flex;
     align-items: center;
+    bottom: 0;
 }
 
 .img-container {
@@ -137,12 +141,20 @@
     object-fit: cover;
 }
 
+
 @media screen and (max-width: 840px) {
 
     .s2-2 {
         display: grid;
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: repeat(3, 1fr); 
       
+    }
+
+    .card {
+        background-color: #EDEFEE;
+        overflow: hidden;
+        border-radius: 10px;
+        width: auto;
     }
     
 }
