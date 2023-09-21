@@ -4,6 +4,7 @@ import "./styles/Navbar.css";
 import Logo from "../assets/logo1.png";
 import Shop from "../assets/iconshop.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Font, { Text } from "react-font";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -17,80 +18,96 @@ const NavBar = () => {
       <nav>
         <div className="navbarContainer">
           {nav ? (
-            <ul className="ulSmall">
-              <div className="sideBar">
-                <img src={Logo} className="Littlelemon2" alt="logo1" />
-                <AiOutlineClose
-                  className="close"
-                  size={30}
-                  onClick={handleClick}
-                />
-              </div>
-              <li>
-                <Link to="/home" className="nav-item">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/home" className="nav-item">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/home" className="nav-item">
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link to="/home" className="nav-item">
-                  Reservations
-                </Link>
-              </li>
-              <li>
-                <Link to="/home" className="nav-item">
-                  Order Online
-                </Link>
-              </li>
-              <li>
-                <Link to="/home" className="nav-item">
-                  Login
-                </Link>
-              </li>
-            </ul>
+            <Font family="Karla" weight={700}>
+              <ul className="ulSmall">
+                <div className="sideBar">
+                  <img src={Logo} className="Littlelemon2" alt="logo1" />
+                  <AiOutlineClose
+                    className="close"
+                    size={30}
+                    onClick={handleClick}
+                  />
+                </div>
+
+                <li>
+                  <Link to="/home" className="nav-item">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/home" className="nav-item">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/home" className="nav-item">
+                    Menu
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/home" className="nav-item">
+                    Reservations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/home" className="nav-item">
+                    Order Online
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/home" className="nav-item">
+                    Login
+                  </Link>
+                </li>
+              </ul>
+            </Font>
           ) : null}
 
           <AiOutlineMenu className="menu" size={30} onClick={handleClick} />
           <img src={Logo} className="Littlelemon" alt="logo1" />
           <img src={Shop} className="shopIcon" alt="shop" />
+
           <ul className="ulBig">
             <li>
               <Link to="/home" className="nav-item">
-                Home
+                <Font family="Karla" weight={700}>
+                  Home
+                </Font>
               </Link>
             </li>
             <li>
               <Link to="/home" className="nav-item">
-                About
+                <Font family="Karla" weight={700}>
+                  About
+                </Font>
               </Link>
             </li>
             <li>
               <Link to="/home" className="nav-item">
-                Menu
+                <Font family="Karla" weight={700}>
+                  Menu
+                </Font>
               </Link>
             </li>
             <li>
               <Link to="/home" className="nav-item">
-                Reservations
+                <Font family="Karla" weight={700}>
+                  Reservations
+                </Font>
               </Link>
             </li>
             <li>
               <Link to="/home" className="nav-item">
-                Order Online
+                <Font family="Karla" weight={700}>
+                  Order Online
+                </Font>
               </Link>
             </li>
             <li>
               <Link to="/home" className="nav-item">
-                Login
+                <Font family="Karla" weight={700}>
+                  Login
+                </Font>
               </Link>
             </li>
           </ul>

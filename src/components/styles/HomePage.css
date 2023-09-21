@@ -16,21 +16,22 @@
 }
 
 h1 {
-    font-size: 58px;
+    font-size: 56px;
     color: #F4CE14;
     margin-bottom: 0px;
+    font-weight: 400;
 }
 
 h4 {
     color: white;
-    font-size: 22px;
+    font-size: 32px;
     position: absolute;
     margin-top: -7px;
     font-weight: lighter;
 }
 
 p {
-    padding-top: 45px;
+    padding-top: 50px;
     width: 90%;
     color: white;
 }
@@ -58,9 +59,9 @@ button {
 
 #button1 {
     background-color: #F4CE14;
-    padding: 20px;
+    padding: 17px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
 }
 

@@ -10,7 +10,7 @@
     padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     color: black;
-    font-size: 44px;
+    font-size: 64px;
 }
 
 #s4-subtitle {
@@ -30,7 +30,8 @@
     color: black;
     font-size: 24px;
     padding-bottom: 30px;
-    margin-top: -5px;
+    margin-top: -20px;
+    font-size: 40px;
 }
 
 #s4-text {
@@ -38,7 +39,7 @@
     padding: 0;
     color: black;
     text-align: justify;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .section4-col1 {
@@ -83,7 +84,7 @@
 
     .s4-container {
         max-width: 810px;
-        max-height: 750px;
+        max-height: 810px;
         padding-top: 60px;
         padding-left: 10px;
         padding-right: 10px;
@@ -113,7 +114,7 @@
 @media screen and (max-width: 510px) {
 
     .s4-container {
-        max-height: 780px;
+        max-height: 820px;
     }
 
     .section4-col2 {

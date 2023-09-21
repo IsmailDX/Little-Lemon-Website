@@ -5,11 +5,14 @@ import Box from "./Box";
 import Basha from "../assets/basha.jpg";
 import Thomas from "../assets/Ismaildx.png";
 import Rash from "../assets/rash.png";
+import Font, { Text } from "react-font";
 
 const Testimonials = () => {
   return (
     <div className="section3">
-      <h3 className="section3-title">Testimonials</h3>
+      <Font family="Markazi Text">
+        <h3 className="section3-title">Testimonials</h3>
+      </Font>
       <div className="section-container">
         <Box
           Name="Ismail Hussein"

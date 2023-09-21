@@ -37,7 +37,7 @@ ul {
 }
 
 li {
-    font: 15px;
+    font: 20px;
     padding-bottom: 3px;
     color: white;
 }
@@ -78,14 +78,17 @@ li {
         grid-template-columns: 1fr;
         justify-content: center;
         align-items: center;
+        gap: 20px;
     }
 
     #b1 {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     li {
+        padding-left: 0%;
         color: white;
         font: 15px;
         padding-bottom: 3px;
