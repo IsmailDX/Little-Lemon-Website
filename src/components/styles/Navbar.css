@@ -1,3 +1,16 @@
+.nav-open {
+    width: 60%;
+}
+
+.nav-close {
+    width: 0px;
+}
+
+.nav {
+    transition: width;
+    transition-duration: 200ms;
+}
+
 .navbarContainer {
     display: flex;
     justify-content: center;
@@ -11,14 +24,14 @@
     display: flex;
     list-style: none;
 }
-  
+
 li {
     padding-left: 17px;
 }
-  
+
 .nav-item {
-    text-decoration: none; 
-    color: #333; 
+    text-decoration: none;
+    color: #333;
 }
 
 .menu {
@@ -34,11 +47,11 @@ li {
     display: none;
 }
 
-.Littlelemon{
+.Littlelemon {
     padding-bottom: 6px;
 }
 
-.Littlelemon2{
+.Littlelemon2 {
     display: none;
 }
 
@@ -60,19 +73,19 @@ li {
         display: block;
     }
 
-    .Littlelemon{
+    .Littlelemon {
         width: 170px;
         padding-bottom: 0px;
     }
 
     .ulSmall {
         display: block;
+        overflow: hidden;
         list-style: none;
         position: fixed;
         top: 0;
         left: 0;
         background-color: white;
-        width: 60%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -88,15 +101,15 @@ li {
         border-width: 100%;
     }
 
-    .Littlelemon2{
+    .Littlelemon2 {
         display: block;
         width: 170px;
         padding-top: 20px;
         padding-left: 12px;
         padding-bottom: 15px;
     }
-    
-    .sideBar{
+
+    .sideBar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -109,24 +122,22 @@ li {
         padding-top: 5px;
         padding-right: 10px;
     }
-
 }
 
 @media screen and (max-width: 400px) {
-
-    .Littlelemon{
+    .Littlelemon {
         width: 140px;
     }
 
-    .Littlelemon2{
+    .Littlelemon2 {
         display: block;
         width: 130px;
         padding-top: 20px;
-       
+
         padding-bottom: 15px;
     }
-    
-    .sideBar{
+
+    .sideBar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -139,5 +150,4 @@ li {
         padding-top: 5px;
         padding-right: 10px;
     }
-
 }
