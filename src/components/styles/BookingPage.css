@@ -1,0 +1,28 @@
+.Booking-section {
+    background-color: #495E57;
+    display: flex;
+    justify-content: center;  
+    width: auto;
+    padding: 30px;
+}
+
+.Booking-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-start;  
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+    .Booking-container {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: center;  
+        align-items: center;
+    }
+ 
+}

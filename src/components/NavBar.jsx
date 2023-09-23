@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './styles/Navbar.css'
 import Logo from '../assets/logo1.png'
 import Shop from '../assets/iconshop.png'
@@ -35,14 +35,6 @@ const NavBar = () => {
         },
     ]
 
-    const scrollTo = (id) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    }
-
-    useEffect(() => {
-        console.log(isOpen)
-    }, [isOpen])
-
     return (
         <div>
             <nav>
@@ -53,11 +45,13 @@ const NavBar = () => {
                         }`}
                     >
                         <div className="sideBar">
-                            <img
-                                src={Logo}
-                                className="Littlelemon2"
-                                alt="logo1"
-                            />
+                            <a href="/">
+                                <img
+                                    src={Logo}
+                                    className="Littlelemon2"
+                                    alt="logo1"
+                                />
+                            </a>
                             <AiOutlineClose
                                 className="close"
                                 size={30}
@@ -66,11 +60,12 @@ const NavBar = () => {
                         </div>
                         {links.map((link) => {
                             return (
-                                <li
-                                    onClick={() => scrollTo(link.link)}
-                                    className="nav-item"
-                                >
-                                    {link.text}
+                                <li className="nav-item">
+                                    <a href={link.link} className="nav-item">
+                                        <Font family="Karla" weight={700}>
+                                            {link.text}
+                                        </Font>
+                                    </a>
                                 </li>
                             )
                         })}
@@ -81,7 +76,9 @@ const NavBar = () => {
                         size={30}
                         onClick={() => setOpen((prev) => !prev)}
                     />
-                    <img src={Logo} className="Littlelemon" alt="logo1" />
+                    <a href="/">
+                        <img src={Logo} className="Littlelemon" alt="logo1" />
+                    </a>
                     <img src={Shop} className="shopIcon" alt="shop" />
 
                     <ul className="ulBig">

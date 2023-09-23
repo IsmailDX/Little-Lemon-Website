@@ -2,6 +2,7 @@ import React from 'react'
 import './styles/HomePage.css'
 import Font from 'react-font'
 import Food from '../assets/Rectangle 45.png'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     return (
@@ -22,7 +23,9 @@ const HomePage = () => {
                         </p>
                     </Font>
                     <Font family="Roboto">
-                        <button id="button1">Reserve a table</button>
+                        <Link to="/BookingPage">
+                            <button id="button1">Reserve a table</button>
+                        </Link>
                     </Font>
                 </div>
                 <div className="imgContainer">

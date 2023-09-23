@@ -65,6 +65,15 @@ button {
     font-weight: bold;
 }
 
+#button1:hover{
+    background-color: #dfba00;
+}
+
+#button1:focus{
+    background-color: #000000;
+    color: #F4CE14;
+}
+
 @media screen and (max-width: 730px) {
 
     .col1{
