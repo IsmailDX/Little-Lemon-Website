@@ -1,41 +1,50 @@
-import React, { useState } from 'react'
 import './styles/Form.css'
-import Font from 'react-font'
+import { useState, useEffect } from 'react'
+import { fetchAPI } from './Api'
 
-const BookingForm = () => {
-    const [Date, setDate] = useState('')
-    const [time, setTime] = useState('')
-    const [numOfGuests, setNumOfGuests] = useState('')
-    const [occasion, setOccasion] = useState('Birthday')
+const BookingForm = ({
+    availableTimes,
+    updateTimes,
+    onReservationComplete,
+}) => {
+    const [selectedDate, setSelectedDate] = useState('')
 
-    const availableTimes = [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-    ]
+    useEffect(() => {
+        if (selectedDate) {
+            fetchAPI(selectedDate)
+        }
+    }, [selectedDate, updateTimes])
+
+    const handleInputChange = (name, value) => {
+        if (name === 'date') {
+            const selectedDateFormatted = value.split('-').reverse().join('-') // Format to 'DD-MM-YYYY'
+            setSelectedDate(selectedDateFormatted)
+            updateTimes(selectedDateFormatted)
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        onReservationComplete()
+    }
 
     return (
         <form>
             <h1 id="bookh1">Booking Form</h1>
             <label htmlFor="res-date">Choose date</label>
-
             <input
                 type="date"
                 id="res-date"
                 onChange={(e) => {
-                    setDate(e.target.value)
+                    handleInputChange('date', e.target.value)
                 }}
             />
 
             <label htmlFor="res-time">Choose time</label>
-
             <select
                 id="res-time"
                 onChange={(e) => {
-                    setTime(e.target.value)
+                    handleInputChange('time', e.target.value)
                 }}
             >
                 {availableTimes.map((option) => (
@@ -45,8 +54,7 @@ const BookingForm = () => {
                 ))}
             </select>
 
-            <label htmlFor="guests">Number of guests</label>
-
+            <label htmlFor="guests">Number of Guests</label>
             <input
                 type="number"
                 placeholder="1"
@@ -54,25 +62,28 @@ const BookingForm = () => {
                 max="10"
                 id="guests"
                 onChange={(e) => {
-                    setNumOfGuests(e.target.value)
+                    handleInputChange('numOfGuests', e.target.value)
                 }}
             />
 
-            <label htmlFor="occasion">Occasion</label>
-
+            <label htmlFor="occasion">Select Occasion</label>
             <select
                 id="occasion"
                 onChange={(e) => {
-                    setOccasion(e.target.value)
+                    handleInputChange('occasion', e.target.value)
                 }}
             >
-                <option>Birthday</option>
-                <option>Anniversary</option>
+                <option disabled selected value="">
+                    Select Occasion
+                </option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
             </select>
             <input
                 type="submit"
-                value="Make Your reservation"
+                value="Make Your Reservation"
                 id="submitButton"
+                onClick={handleSubmit}
             />
         </form>
     )
