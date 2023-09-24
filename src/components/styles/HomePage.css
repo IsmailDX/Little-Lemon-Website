@@ -2,6 +2,7 @@
     background-color: #495E57;
     display: flex;
     justify-content: center;  
+    overflow: hidden;
 }
 
 .content{
@@ -63,15 +64,21 @@ button {
     border-radius: 20px;
     font-size: 18px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 #button1:hover{
-    background-color: #dfba00;
+    background-color: #495E57;
+    border: white solid 2px;
+    margin: -1px;
+    color: white;
 }
 
 #button1:focus{
-    background-color: #000000;
-    color: #F4CE14;
+    background-color: #495E57;
+    border: white solid 2px;
+    margin: -1px;
+    color: white;
 }
 
 @media screen and (max-width: 730px) {

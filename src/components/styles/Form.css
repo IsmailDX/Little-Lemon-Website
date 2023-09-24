@@ -18,11 +18,12 @@ label {
 form input,
 form select {
     width: 50%;
-    height: 30px;
+    height: 40px;
     padding: 0;
     margin: 0;
     font-size: 17px;
-    border-radius: 10px;
+    font-family:  sans-serif;
+    border-radius: 5px;
     border: none;
      
 }
@@ -32,8 +33,8 @@ form select {
     outline: none;
     font-family: inherit;
     font-size: 17px;
-    border-radius: 10px;
-    
+    border-radius: 5px;
+    font-family:  sans-serif;
 }
 
 #submitButton {
@@ -45,15 +46,32 @@ form select {
     border-radius: 20px;
     font-size: 15px;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 #submitButton:hover{
-    background-color: #dfba00;
+    background-color: #495E57;
+    border: white solid 2px;
+   
+    color: white;
 }
 
 #submitButton:focus{
-    background-color: #000000;
-    color: #F4CE14;
+    background-color: #495E57;
+    border: white solid 2px;
+ 
+    color: white;
+}
+
+.error-message {
+    color: red;  
+    font-size: 14px;  
+    padding-left: 10px;
+}
+
+.ChooseDiv {
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (max-width: 400px) {
@@ -78,5 +96,9 @@ form select {
 
     #bookh1 {
         text-align: center;
+    }
+    .ChooseDiv {
+        display: flex;
+      flex-direction: column;
     }
 }
