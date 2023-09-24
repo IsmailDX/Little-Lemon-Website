@@ -12,7 +12,7 @@ import Font from 'react-font'
 
 const SpecialsPage = () => {
     return (
-        <div className="section2">
+        <div className="section2" id="menu">
             <div className="container-section2">
                 <div className="s2-1">
                     <Font family="Karla">
