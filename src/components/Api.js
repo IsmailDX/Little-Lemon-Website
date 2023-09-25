@@ -1,15 +1,25 @@
 // Sample data
-const availableTimesData = {
-    '25-09-2023': generateRandomTimes(),
-    '26-09-2023': generateRandomTimes(),
-    '27-09-2023': generateRandomTimes(),
-    '28-09-2023': generateRandomTimes(),
-    '29-09-2023': generateRandomTimes(),
-    '30-09-2023': generateRandomTimes(),
-    '01-10-2023': generateRandomTimes(),
-    '02-10-2023': generateRandomTimes(),
-    '03-10-2023': generateRandomTimes(),
-    '04-10-2023': generateRandomTimes(),
+const availableTimesData = generateAvailableTimes()
+
+function generateAvailableTimes() {
+    const availableTimes = {}
+    const currentDate = new Date()
+
+    for (let i = 0; i < 10; i++) {
+        const date = new Date(currentDate)
+        date.setDate(currentDate.getDate() + i)
+        const formattedDate = formatDate(date)
+        availableTimes[formattedDate] = generateRandomTimes()
+    }
+
+    return availableTimes
+}
+
+function formatDate(date) {
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear().toString()
+    return `${day}-${month}-${year}`
 }
 
 function generateRandomTimes() {
