@@ -5,7 +5,7 @@ import Font from 'react-font'
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <div className="footer" id="contact">
             <div className="footer-container">
                 <div id="b1">
                     <img id="footer-logo" src={Logo} alt="Logo" />

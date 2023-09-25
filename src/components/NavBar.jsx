@@ -14,24 +14,21 @@ const NavBar = () => {
             link: '/#home',
         },
         {
-            text: 'About',
-            link: '#about',
-        },
-        {
             text: 'Menu',
             link: '/#menu',
         },
         {
-            text: ' Reservations',
-            link: '/#reservations',
+            text: 'Testimonials',
+            link: '/#testimonials',
         },
         {
-            text: ' Order Online',
-            link: '/#order',
+            text: 'About',
+            link: '#about',
         },
+
         {
-            text: ' Login',
-            link: '/#login',
+            text: 'Contact',
+            link: '/#contact',
         },
     ]
 

@@ -9,7 +9,7 @@ import Font from 'react-font'
 
 const Testimonials = () => {
     return (
-        <div className="section3">
+        <div className="section3" id="testimonials">
             <Font family="Markazi Text">
                 <h3 className="section3-title">Testimonials</h3>
             </Font>

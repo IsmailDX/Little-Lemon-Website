@@ -1,21 +1,31 @@
 import React from 'react'
 import './styles/ConfirmedBooking.css'
+import Font from 'react-font'
 
-const ConfirmedBooking = (showConfirmation) => {
+const ConfirmedBooking = () => {
     return (
         <div className="confirmation-section">
             <div className="confirmation-container">
                 <h2 id="reserv" className="conf">
-                    Reservation Confirmed!
+                    <Font family="Roboto">Reservation Confirmed!</Font>
                 </h2>
-                <p className="conf">Thank you for choosing our restaurant!</p>
                 <p className="conf">
-                    Your table has been reserved for the selected date and time.
+                    <Font family="Karla">
+                        Thank you for choosing our restaurant!
+                    </Font>
                 </p>
-                <p className="conf">We look forward to serving you.</p>
+                <p className="conf">
+                    <Font family="Karla">
+                        Your table has been reserved for the selected date and
+                        time.
+                    </Font>
+                </p>
+                <p className="conf">
+                    <Font family="Karla">We look forward to serving you. </Font>
+                </p>
                 <a id="sub" href="/">
                     <button type="submit" id="submitButton2">
-                        Go Back
+                        <Font family="Karla">Go Back </Font>
                     </button>
                 </a>
             </div>

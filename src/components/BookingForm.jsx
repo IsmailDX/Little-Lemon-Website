@@ -4,13 +4,11 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useState, useEffect } from 'react'
 import { fetchAPI } from './Api'
+import ConfirmedBooking from './ConfirmedBooking'
 
-const BookingForm = ({
-    availableTimes,
-    updateTimes,
-    onReservationComplete,
-}) => {
+const BookingForm = ({ availableTimes, updateTimes }) => {
     const [selectedDate, setSelectedDate] = useState('')
+    const [showConfirmation, setShowConfirmation] = useState(false)
 
     useEffect(() => {
         if (selectedDate) {
@@ -40,7 +38,7 @@ const BookingForm = ({
             occasionField: Yup.string().required('Required'),
         }),
         onSubmit: (values) => {
-            onReservationComplete()
+            setShowConfirmation(true)
         },
     })
 
@@ -51,103 +49,106 @@ const BookingForm = ({
     }, [formik.values.dateField, updateTimes])
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <h1 id="bookh1">Booking Form</h1>
+        <>
+            {showConfirmation ? <ConfirmedBooking /> : ''}
+            <form onSubmit={formik.handleSubmit}>
+                <h1 id="bookh1">Booking Form</h1>
 
-            <label htmlFor="res-date">Choose date</label>
-            <div className="ChooseDiv">
-                <input
-                    type="date"
-                    id="res-date"
-                    name="dateField"
-                    onChange={(e) => {
-                        handleInputChange('date', e.target.value)
-                        formik.handleChange(e)
-                    }}
-                />
-                {formik.errors.dateField ? (
-                    <div className="error-message">
-                        {formik.errors.dateField}
-                    </div>
-                ) : null}
-            </div>
+                <label htmlFor="res-date">Choose date</label>
+                <div className="ChooseDiv">
+                    <input
+                        type="date"
+                        id="res-date"
+                        name="dateField"
+                        onChange={(e) => {
+                            handleInputChange('date', e.target.value)
+                            formik.handleChange(e)
+                        }}
+                    />
+                    {formik.errors.dateField ? (
+                        <div className="error-message">
+                            {formik.errors.dateField}
+                        </div>
+                    ) : null}
+                </div>
 
-            <label htmlFor="res-time">Choose time</label>
-            <div className="ChooseDiv">
-                <select
-                    id="res-time"
-                    name="timeField"
-                    onChange={(e) => {
-                        handleInputChange('time', e.target.value)
-                        formik.handleChange(e)
-                    }}
-                >
-                    <option disabled selected value="">
-                        Select Time
-                    </option>
-                    {availableTimes.map((option) => (
-                        <option key={option} value={option}>
-                            {option}
+                <label htmlFor="res-time">Choose time</label>
+                <div className="ChooseDiv">
+                    <select
+                        id="res-time"
+                        name="timeField"
+                        onChange={(e) => {
+                            handleInputChange('time', e.target.value)
+                            formik.handleChange(e)
+                        }}
+                    >
+                        <option disabled selected value="">
+                            Select Time
                         </option>
-                    ))}
-                </select>
-                {formik.errors.timeField ? (
-                    <div className="error-message">
-                        {formik.errors.timeField}
-                    </div>
-                ) : null}
-            </div>
+                        {availableTimes.map((option) => (
+                            <option key={option} value={option}>
+                                {option}
+                            </option>
+                        ))}
+                    </select>
+                    {formik.errors.timeField ? (
+                        <div className="error-message">
+                            {formik.errors.timeField}
+                        </div>
+                    ) : null}
+                </div>
 
-            <label htmlFor="guests">Number of Guests</label>
-            <div className="ChooseDiv">
+                <label htmlFor="guests">Number of Guests</label>
+                <div className="ChooseDiv">
+                    <input
+                        type="number"
+                        placeholder="Number of guests"
+                        min="1"
+                        max="10"
+                        id="guests"
+                        name="guestsField"
+                        onChange={(e) => {
+                            handleInputChange('numOfGuests', e.target.value)
+                            formik.handleChange(e)
+                        }}
+                    />
+                    {formik.errors.guestsField ? (
+                        <div className="error-message">
+                            {formik.errors.guestsField}
+                        </div>
+                    ) : null}
+                </div>
+
+                <label htmlFor="occasion">Select Occasion</label>
+                <div className="ChooseDiv">
+                    <select
+                        id="occasion"
+                        name="occasionField"
+                        onChange={(e) => {
+                            handleInputChange('occasion', e.target.value)
+                            formik.handleChange(e)
+                        }}
+                    >
+                        <option disabled selected value="">
+                            Select Occasion
+                        </option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Anniversary">Anniversary</option>
+                    </select>
+                    {formik.errors.occasionField ? (
+                        <div className="error-message">
+                            {formik.errors.occasionField}
+                        </div>
+                    ) : null}
+                </div>
                 <input
-                    type="number"
-                    placeholder="Number of guests"
-                    min="1"
-                    max="10"
-                    id="guests"
-                    name="guestsField"
-                    onChange={(e) => {
-                        handleInputChange('numOfGuests', e.target.value)
-                        formik.handleChange(e)
-                    }}
+                    type="submit"
+                    value="Make Your Reservation"
+                    id="submitButton"
+                    disabled={!formik.isValid}
                 />
-                {formik.errors.guestsField ? (
-                    <div className="error-message">
-                        {formik.errors.guestsField}
-                    </div>
-                ) : null}
-            </div>
-
-            <label htmlFor="occasion">Select Occasion</label>
-            <div className="ChooseDiv">
-                <select
-                    id="occasion"
-                    name="occasionField"
-                    onChange={(e) => {
-                        handleInputChange('occasion', e.target.value)
-                        formik.handleChange(e)
-                    }}
-                >
-                    <option disabled selected value="">
-                        Select Occasion
-                    </option>
-                    <option value="Birthday">Birthday</option>
-                    <option value="Anniversary">Anniversary</option>
-                </select>
-                {formik.errors.occasionField ? (
-                    <div className="error-message">
-                        {formik.errors.occasionField}
-                    </div>
-                ) : null}
-            </div>
-            <input
-                type="submit"
-                value="Make Your Reservation"
-                id="submitButton"
-                disabled={!formik.isValid}
-            />
-        </form>
+            </form>
+        </>
     )
 }
 
