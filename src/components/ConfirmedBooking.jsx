@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/ConfirmedBooking.css'
 import Font from 'react-font'
 
-const ConfirmedBooking = () => {
+const ConfirmedBooking = (onReservationComplete) => {
     return (
         <div className="confirmation-section">
             <div className="confirmation-container">
